@@ -1,0 +1,67 @@
+/* MaximaJax style sheet */
+/*
+   Copyright (c) 2016 Junichi Fujimori (fuzzy_jazzy@Wacooky.com)
+   Released under the MIT license
+   http://opensource.org/licenses/mit-license.php
+*/
+/* Ver. 1.0 2016-03-08 GitHub */
+
+/* MximaJax div  */
+
+/* maxima-in, maxima-out are set by maxima.php */
+/* MAXIMA (%ix) */
+.maxima-in {
+  color: green;
+}
+
+/* MAXIMA (%ox) */
+.maxima-out {
+  color: red;
+}
+
+/* Followings are used in MaximaJax.js */
+/* MaximaJax div */
+.MaximaJax {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+/* MAXIMA clickable label */
+.maxima-label {
+  margin: 20px 0px 0px 0px;
+  padding: 4px;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  border-radius: 10px;        /* CSS3 */
+  -webkit-border-radius: 10px;/* Safari,Chrome */
+  -moz-border-radius: 10px;   /* Firefox*/
+}
+
+/* MAXIMA code */
+.MaximaJax pre {
+  margin: 0px 0px 0px 20px;
+  padding-left: 20px;
+}
+
+/* MAXIMA code */
+.MaximaJax .code {
+  background-color: #ffffd0;
+  color: #000000;
+}
+
+/* execute button */
+.MaximaJax input {
+  margin: 0px 0px 0px 20px;
+}
+
+/* MAXIMA code */
+.MaximaJax .maxima-result {
+  background-color: #eeeeee;
+  margin: 0px 0px 10px 20px;
+}
+
+/*
+pre:first-line {
+    line-height: 0px;
+}
+*/

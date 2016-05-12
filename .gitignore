@@ -1,0 +1,7 @@
+# ignore system files
+.DS_Store
+._*
+
+# ignore private files
+wacooky/
+local/

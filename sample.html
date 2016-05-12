@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<!-- Ver. 1.0: 2016-03-07 GitHub -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript" src="http://localhost/js/jquery-2.1.1.js"></script>
+		<script type="text/javascript"
+			src="http://localhost/Mathjax/MathJax.js?config=TeX-AMS-MML_SVG">
+		</script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+				TeX: { TagSide: "left" }
+			 });
+		</script>
+		<script type="text/javascript" src="http://localhost/MaximaJax/MaximaJax.js"></script>
+		<title>MaximaJax Sample</title>
+	</head>
+
+	<body>
+		<h1>MaximaJax Sample</h1>
+
+		<!-- MaximaJax -->
+		<div class="MaximaJax">
+			<pre class="code no-hide"><code>
+exp(2*%pi*%alpha*t);
+tex(%);
+			</code></pre>
+		</div>
+		<!-- /MaximaJax -->
+
+		<!-- MaximaJax -->
+		<div name="eq1" class="MaximaJax">
+			<pre class="code">
+				<code>
+f(x):=exp(-q^2*(x^2+2*%lambda*x))*cos(p*x)$
+'f(x)=f(x);
+tex(%);
+assume(q>0,%lambda>0)$
+tex('integrate(f(x),x,minf,inf)=integrate(f(x),x,minf,inf));
+				</code>
+			</pre>
+		</div>
+		<!-- /MaximaJax -->
+
+	</body>
+</html>
