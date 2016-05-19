@@ -1,4 +1,6 @@
-# MaximaJax  <span style="font-size: 0.5em">[English](#english)/[日本語](#japanese)</span>
+# MaximaJax  <span style="font-size: 0.5em">[English](#english)/[日本語](#japanese)</span> 
+
+Ver.2.0
 
 ##<a name="english"></a>What it is?
 
@@ -32,7 +34,19 @@ To get display as show in Fig.1
 
 put HTML lements
 
-		<div class="MaximaJax">
+	<script type="math/maxima; name=eq1; no-hide;">
+		exp(2*%pi*%alpha*t);
+		tex(%);
+	</script>
+	<script type="math/maxima;">
+		...
+	</script>
+
+in your HTML or Markdown.
+
+Next example is used in version 1.0 and will be removed.
+
+	<div class="MaximaJax">
 			<pre class="code no-hide"><code>
 	exp(2*%pi*%alpha*t);
 	tex(%);
@@ -42,11 +56,11 @@ put HTML lements
 		<div name="eq1" class="MaximaJax">
 			<pre class="code">
 				<code>
+				...
 				</code>
 			</pre>
 		</div>
 		
-in your HTML or Markdown.
 
 Maxima codes and results of the code excusion are displayed in MaximaJax class &lt;div&gt;. 
 Initially it is diplayed as a button with label "MAIMXA". And if &lt;pre&gt; element has 'no-hide' class then Maxima codes is displayed as well.
@@ -94,7 +108,19 @@ MaximaJaxはオープンソースの数式処理ソフト[MAXIMA](http://maxima.
  図１
 
 
-HTMLエレメント 
+HTMLエレメント
+
+	<script type="math/maxima; name=eq1; no-hide;">
+		exp(2*%pi*%alpha*t);
+		tex(%);
+	</script>
+	<script type="math/maxima;">
+		...
+	</script>
+
+を、あなたのHTMLまたはMarkdownに入れてください.
+
+次のサンプルはVer.1.0で使われた書式で、将来は削除される予定です。
 
 		<div class="MaximaJax">
 			<pre class="code no-hide"><code>
@@ -110,7 +136,6 @@ HTMLエレメント
 			</pre>
 		</div>
 		
-を、あなたのHTMLまたはMarkdownに入れてください.
 
 Maximaのコードと、それを実行した結果は'MaximaJax'クラス を指定した&lt;div&gt;の中に表示されます。
 初期状態では、それは"MAIMXA"というラベルが付いたボタンとして表示されます。そしてもし&lt;pre&gt;エレメントに'no-hide'クラスが指定されていれば、Maximaのコードも表示されます。

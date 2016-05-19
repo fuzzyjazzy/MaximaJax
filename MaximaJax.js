@@ -7,8 +7,8 @@
 //
 //-- MaximaJax requires jQuery and MathJax.
 //--
-//-- Ver. 1.0 2016-03-09 GitHub
-//--
+//-- Ver. 2.0 2016-05-19 change MaximaJax element div --> script
+//-- Ver. 1.0 2016-03-09
 
 //-- query is undefined or string key=value&key=value ...
 var $script = $(document.currentScript);
@@ -33,6 +33,8 @@ MaximaJax.prepare = function() {
 							base_url  + 'maximajax.css">';
 	$script.after(style);
 
+//------------------------------------------------------
+//-- Deprecated
 	$(".MaximaJax").each( function() {
 		var $this = $(this);
 		var name = $this.attr("name");
@@ -50,6 +52,41 @@ MaximaJax.prepare = function() {
 	});
 	$(".MaximaJax input").css("visibility", "hidden");
 	$(".MaximaJax div.maxima-result").hide();
+	//-- Deprecated
+	//------------------------------------------------------
+
+	$('script').each( function() {
+		var $this = $(this);
+		var type = $this.attr('type');
+		if (typeof type == 'string') {
+			var types = type.split(/\s*;\s*/);
+			if (types[0] == 'math/maxima') {
+				var props = {};
+				for (var i = 1; i < types.length; i++) {
+					var params = types[i].split('=');
+					props[params[0]] = (params[1] == null) ? '' : params[1];
+				}
+
+				if (!('name' in props))
+					props['name'] = '';
+				if (!('no-hide' in props))
+					props['no-hide'] = false;
+				else
+					props['no-hide'] = true;
+
+				var html = $this.html().replace(/(\r\n|\n|\r)/,"");
+				var $mjx = $('<div class="MaximaJax"></div>');
+				var $button = $('<span onclick="MaximaJax.on_label_click(this);" class="maxima-label">MAXIMA ' + props['name'] + '</span>');
+				$mjx.prepend($button);
+				var pre = '<pre' + (props['no-hide'] ? ' class="no-hide">' : '>');
+				$mjx.append(pre + '<code>' + html + '</code></pre>');
+				$mjx.append('<input type="button" value="Exec" onclick="MaximaJax.show_result(this)">');
+				$mjx.append('<div class="maxima-result"></div>');
+				$this.after($mjx);
+				MaximaJax.on_label_click($button);
+			}
+		}
+	});
 
 }
 
