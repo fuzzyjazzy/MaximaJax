@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<!-- Ver. 1.0: 2016-03-07 GitHub -->
+	<!-- Ver. 2.0: 2016-05-20 GitHub -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<script type="text/javascript" src="http://localhost/js/jquery-2.1.1.js"></script>
@@ -20,28 +20,18 @@
 	<body>
 		<h1>MaximaJax Sample</h1>
 
-		<!-- MaximaJax -->
-		<div class="MaximaJax">
-			<pre class="code no-hide"><code>
-exp(2*%pi*%alpha*t);
-tex(%);
-			</code></pre>
-		</div>
-		<!-- /MaximaJax -->
+		<script type="math/maxima; name=eq1; no-hide;">
+			exp(2*%pi*%alpha*t);
+			tex(%);
+		</script>
 
-		<!-- MaximaJax -->
-		<div name="eq1" class="MaximaJax">
-			<pre class="code">
-				<code>
-f(x):=exp(-q^2*(x^2+2*%lambda*x))*cos(p*x)$
-'f(x)=f(x);
-tex(%);
-assume(q>0,%lambda>0)$
-tex('integrate(f(x),x,minf,inf)=integrate(f(x),x,minf,inf));
-				</code>
-			</pre>
-		</div>
-		<!-- /MaximaJax -->
+		<script type="math/maxima; name=eq1; no-hide;">
+			f(x):=exp(-q^2*(x^2+2*%lambda*x))*cos(p*x)$
+			'f(x)=f(x);
+			tex(%);
+			assume(q>0,%lambda>0)$
+			tex('integrate(f(x),x,minf,inf)=integrate(f(x),x,minf,inf));
+		</script>
 
 	</body>
 </html>

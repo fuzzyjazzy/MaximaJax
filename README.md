@@ -34,17 +34,19 @@ To get display as show in Fig.1
 
 put HTML lements
 
-	<script type="math/maxima; name=eq1; no-hide;">
+	<script type="math/maxima; no-hide;">
 		exp(2*%pi*%alpha*t);
 		tex(%);
 	</script>
-	<script type="math/maxima;">
-		...
+
+	<script type="math/maxima; name=eq1;">
+		exp(2*%pi*%alpha*t);
+		tex(%);
 	</script>
 
 in your HTML or Markdown.
 
-Next example is used in version 1.0 and will be removed.
+Next example is used in MaximaJax version 1.0 and will be removed.
 
 	<div class="MaximaJax">
 			<pre class="code no-hide"><code>
@@ -61,6 +63,9 @@ Next example is used in version 1.0 and will be removed.
 			</pre>
 		</div>
 		
+In version 2.0 MaximaJax.js generates HTML same as what version 1.0 requires user to markup by parsing given &lt;script&gt; tag. So 'Behavior' section, written for verion 1.0, is still valid.
+
+### Behavior
 
 Maxima codes and results of the code excusion are displayed in MaximaJax class &lt;div&gt;. 
 Initially it is diplayed as a button with label "MAIMXA". And if &lt;pre&gt; element has 'no-hide' class then Maxima codes is displayed as well.
@@ -110,12 +115,14 @@ MaximaJaxはオープンソースの数式処理ソフト[MAXIMA](http://maxima.
 
 HTMLエレメント
 
-	<script type="math/maxima; name=eq1; no-hide;">
+	<script type="math/maxima; no-hide;">
 		exp(2*%pi*%alpha*t);
 		tex(%);
 	</script>
-	<script type="math/maxima;">
-		...
+
+	<script type="math/maxima; name=eq1;">
+		exp(2*%pi*%alpha*t);
+		tex(%);
 	</script>
 
 を、あなたのHTMLまたはMarkdownに入れてください.
@@ -137,6 +144,10 @@ HTMLエレメント
 		</div>
 		
 
+
+バージョン2.0では、MaximaJax.js　は与えられた&lt;script&gt;タグから、バージョン1.0でユーザに要求したマークアップと同じHTMLを生成します。したがって、"動作"セクション、これはバーション1.0のために書かれましたが、まだ有効です。
+
+### 動作
 Maximaのコードと、それを実行した結果は'MaximaJax'クラス を指定した&lt;div&gt;の中に表示されます。
 初期状態では、それは"MAIMXA"というラベルが付いたボタンとして表示されます。そしてもし&lt;pre&gt;エレメントに'no-hide'クラスが指定されていれば、Maximaのコードも表示されます。
 

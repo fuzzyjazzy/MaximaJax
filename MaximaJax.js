@@ -78,7 +78,7 @@ MaximaJax.prepare = function() {
 				var $mjx = $('<div class="MaximaJax"></div>');
 				var $button = $('<span onclick="MaximaJax.on_label_click(this);" class="maxima-label">MAXIMA ' + props['name'] + '</span>');
 				$mjx.prepend($button);
-				var pre = '<pre' + (props['no-hide'] ? ' class="no-hide">' : '>');
+				var pre = '<pre class=' + (props['no-hide'] ? '"code no-hide">' : '"code">');
 				$mjx.append(pre + '<code>' + html + '</code></pre>');
 				$mjx.append('<input type="button" value="Exec" onclick="MaximaJax.show_result(this)">');
 				$mjx.append('<div class="maxima-result"></div>');
